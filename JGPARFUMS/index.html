@@ -1,19 +1,211 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>JG Parfums | Perfumes & Decants</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;background:#090909;color:#f5f5f5;line-height:1.6}header{position:sticky;top:0;z-index:5;background:#090909ee;border-bottom:1px solid #292929}nav{max-width:1100px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:24px;font-weight:800;letter-spacing:3px}.gold{color:#d4af62}nav a{color:#ddd;text-decoration:none;margin-left:20px;font-size:14px}.hero{max-width:1100px;margin:auto;min-height:620px;padding:70px 22px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}.eyebrow{color:#d4af62;letter-spacing:3px;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(48px,7vw,78px);line-height:.95;margin:18px 0}.hero h1 span{color:#d4af62}.hero p{color:#aaa;max-width:560px;font-size:18px}.btn{display:inline-block;margin-top:26px;padding:14px 25px;border-radius:30px;background:#d4af62;color:#111;text-decoration:none;font-weight:bold}.hero-art{height:390px;border-radius:30px;border:1px solid #303030;background:radial-gradient(circle,#414141,#171717 60%,#0b0b0b);display:flex;align-items:center;justify-content:center}.bottle{width:150px;height:235px;border-radius:18px 18px 28px 28px;background:linear-gradient(90deg,#111,#666,#171717);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:bold;letter-spacing:2px;box-shadow:0 25px 55px #000}section{max-width:1100px;margin:auto;padding:70px 22px}.heading{text-align:center;margin-bottom:38px}.heading h2{font-size:36px}.heading p{color:#999}.products{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.card{background:#151515;border:1px solid #292929;border-radius:22px;padding:18px}.photo{height:250px;border-radius:16px;background:radial-gradient(circle,#454545,#171717 65%);display:flex;align-items:center;justify-content:center;margin-bottom:18px}.mini{width:90px;height:155px;border-radius:12px 12px 22px 22px;background:linear-gradient(90deg,#111,#686868,#151515);display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:bold}.card h3{font-size:22px}.tag{color:#d4af62;font-size:12px;letter-spacing:1px;font-weight:bold}.card p{color:#aaa;margin-top:8px}.price{font-size:20px;font-weight:bold;margin:14px 0}.card a{display:block;text-align:center;padding:11px;background:#242424;border-radius:12px;color:#fff;text-decoration:none}.about{max-width:none;background:#111;border-top:1px solid #222;border-bottom:1px solid #222;text-align:center}.about p{max-width:720px;margin:10px auto;color:#aaa}.contact{text-align:center}footer{text-align:center;padding:32px;color:#777;border-top:1px solid #222;font-size:13px}@media(max-width:760px){.hero{grid-template-columns:1fr;min-height:auto}.hero-art{height:310px}.products{grid-template-columns:1fr}nav a{margin-left:8px;font-size:12px}.logo{font-size:18px}}
-</style></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JG Parfums</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+        }
+
+        header {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            border-bottom: 1px solid #c9a227;
+            position: sticky;
+            top: 0;
+            background: #080808;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .inicio {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .inicio h1 {
+            font-size: 60px;
+            color: #d4af37;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .inicio p {
+            font-size: 20px;
+            color: #ddd;
+        }
+
+        .productos {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .productos h2 {
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 50px;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .producto {
+            background: #111;
+            border: 1px solid #c9a227;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .producto .imagen {
+            height: 260px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .producto h3 {
+            color: #d4af37;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .producto p {
+            color: #ccc;
+            font-size: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        @media (max-width: 800px) {
+            .contenedor {
+                grid-template-columns: 1fr;
+            }
+
+            .inicio h1 {
+                font-size: 42px;
+            }
+
+            header {
+                padding: 0 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+
 <body>
-<header><nav><div class="logo">JG <span class="gold">PARFUMS</span></div><div><a href="#catalogo">Catálogo</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></div></nav></header>
-<section class="hero"><div><div class="eyebrow">JG PARFUMS • CALIDAD • ECONOMÍA • ORIGINALIDAD</div><h1>Tu aroma.<br><span>Tu identidad.</span></h1><p>Descubre fragancias originales y decants seleccionados para cada estilo y ocasión.</p><a class="btn" href="#catalogo">Ver catálogo</a></div><div class="hero-art"><div class="bottle">JG<br>PARFUMS</div></div></section>
-<section id="catalogo"><div class="heading"><h2>Catálogo</h2><p>Fragancias destacadas</p></div><div class="products">
-<article class="card"><div class="photo"><div class="mini">AFNAN<br>9 PM</div></div><h3>Afnan 9 PM</h3><div class="tag">DULCE • INTENSO • NOCTURNO</div><p>Una fragancia dulce y llamativa, perfecta para noches y ocasiones especiales.</p><div class="price">5 ml — $XX.XXX</div><a href="https://wa.me/?text=Hola%2C%20me%20interesa%20Afnan%209%20PM">Consultar por WhatsApp</a></article>
-<article class="card"><div class="photo"><div class="mini">DIOR<br>SAUVAGE</div></div><h3>Dior Sauvage EDT</h3><div class="tag">FRESCO • ESPECIADO • VERSÁTIL</div><p>Un aroma fresco y especiado para quienes buscan una fragancia reconocida y versátil.</p><div class="price">5 ml — $XX.XXX</div><a href="https://wa.me/?text=Hola%2C%20me%20interesa%20Dior%20Sauvage">Consultar por WhatsApp</a></article>
-</div></section>
-<section class="about" id="nosotros"><div class="heading"><h2>Sobre JG Parfums</h2></div><p>Buscamos acercarte a grandes fragancias mediante presentaciones prácticas y precios accesibles.</p><p><strong>Calidad, economía y originalidad.</strong></p></section>
-<section class="contact" id="contacto"><div class="heading"><h2>¿Quieres hacer un pedido?</h2><p>Escríbenos para consultar disponibilidad, tamaños y precios.</p></div><a class="btn" href="https://wa.me/?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20perfumes%20de%20JG%20Parfums">Pedir por WhatsApp</a></section>
-<footer>© 2026 JG Parfums • Perfumes & Decants</footer>
-</body></html>
+
+    <header>
+        <div class="logo">JG PARFUMS</div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+        </nav>
+    </header>
+
+    <section class="inicio" id="inicio">
+        <h1>JG PARFUMS</h1>
+        <p>Calidad, economía y originalidad.</p>
+    </section>
+
+    <section class="productos" id="productos">
+        <h2>Nuestros Perfumes</h2>
+
+        <div class="contenedor">
+
+            <div class="producto">
+                <div class="imagen">
+                    Imagen del perfume
+                </div>
+
+                <h3>Erba Pura</h3>
+                <p>Xerjoff</p>
+            </div>
+
+            <div class="producto">
+                <div class="imagen">
+                    Imagen del perfume
+                </div>
+
+                <h3>Born in Roma</h3>
+                <p>Valentino</p>
+            </div>
+
+            <div class="producto">
+                <div class="imagen">
+                    Imagen del perfume
+                </div>
+
+                <h3>9PM</h3>
+                <p>Afnan</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        © 2026 JG Parfums
+    </footer>
+
+</body>
+</html>
+```
