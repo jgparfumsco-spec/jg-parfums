@@ -280,13 +280,13 @@
             Encuentra el aroma ideal para dejar tu huella.
         </p>
 
-        <a href="#productos" class="boton-productos">
-            DESCUBRIR FRAGANCIAS
-        </a>
+<button class="boton-productos" onclick="mostrarProductos()">
+    DESCUBRIR FRAGANCIAS
+</button>
     </section>
 
-    <section class="productos" id="productos">
-        <h2>Nuestras fragancias</h2>
+    <section class="productos" id="productos" hidden>
+        <h2>Nuestras fragancias</h2> 
 
         <p class="subtitulo">
             Aromas que hablan de ti, estilos que dejan huella.
@@ -352,7 +352,18 @@
         <p><span>JG PARFUMS</span> — Tu esencia, tu estilo.</p>
         <p>© 2026 JG Parfums. Todos los derechos reservados.</p>
     </footer>
+<script>
+    function mostrarProductos() {
+        const productos = document.getElementById("productos");
 
+        productos.hidden = false;
+
+        productos.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+</script>
 </body>
 </html>
 ```
