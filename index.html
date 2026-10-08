@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JG Parfums</title>
+    <title>JG Parfums | Tu esencia, tu estilo</title>
 
     <style>
         * {
@@ -14,17 +14,22 @@
             font-family: Arial, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
         body {
             background: #080808;
             color: white;
         }
 
         header {
-            height: 80px;
+            min-height: 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 8%;
+            padding: 15px 8%;
             border-bottom: 1px solid #c9a227;
             position: sticky;
             top: 0;
@@ -44,34 +49,79 @@
             text-decoration: none;
             margin-left: 25px;
             font-size: 16px;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #d4af37;
         }
 
+        /* INICIO */
         .inicio {
-            min-height: 80vh;
+            min-height: 82vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 30px;
+            padding: 50px 20px;
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(143, 108, 25, 0.17) 0%,
+                    rgba(8, 8, 8, 0.98) 68%
+                ),
+                #080808;
+        }
+
+        .inicio .marca {
+            color: #d4af37;
+            font-size: 18px;
+            letter-spacing: 8px;
+            margin-bottom: 25px;
         }
 
         .inicio h1 {
-            font-size: 60px;
+            font-size: clamp(38px, 6vw, 70px);
             color: #d4af37;
             letter-spacing: 5px;
+            margin-bottom: 22px;
+        }
+
+        .inicio .eslogan {
+            font-size: 21px;
+            color: #eeeeee;
             margin-bottom: 15px;
         }
 
-        .inicio p {
-            font-size: 20px;
-            color: #ddd;
+        .inicio .descripcion {
+            max-width: 600px;
+            color: #bdbdbd;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 35px;
         }
 
+        .boton-productos {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 1px solid #d4af37;
+            border-radius: 4px;
+            background: #d4af37;
+            color: #080808;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .boton-productos:hover {
+            background: transparent;
+            color: #d4af37;
+            transform: translateY(-3px);
+        }
+
+        /* PRODUCTOS */
         .productos {
             padding: 80px 8%;
             text-align: center;
@@ -80,31 +130,38 @@
         .productos h2 {
             font-size: 40px;
             color: #d4af37;
-            margin-bottom: 50px;
+            margin-bottom: 15px;
+        }
+
+        .subtitulo {
+            color: #aaa;
+            margin-bottom: 45px;
+            line-height: 1.6;
         }
 
         .contenedor {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 30px;
         }
 
         .producto {
             background: #111;
-            border: 1px solid #c9a227;
+            border: 1px solid #5c4a1c;
             border-radius: 12px;
-            padding: 30px;
+            padding: 25px;
             transition: 0.3s;
         }
 
         .producto:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transform: translateY(-7px);
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
         }
 
         .producto .imagen {
             height: 260px;
-            background: #1a1a1a;
+            background: #171717;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -125,33 +182,73 @@
             margin-bottom: 10px;
         }
 
-        .producto p {
+        .producto .marca-perfume {
             color: #ccc;
             font-size: 15px;
+            margin-bottom: 15px;
         }
 
+        .producto .detalle {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* PIE DE PÁGINA */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px;
             border-top: 1px solid #333;
             color: #888;
+            font-size: 14px;
+            line-height: 1.8;
         }
 
+        footer span {
+            color: #d4af37;
+        }
+
+        /* CELULARES Y TABLETAS */
         @media (max-width: 800px) {
-            .contenedor {
-                grid-template-columns: 1fr;
-            }
-
-            .inicio h1 {
-                font-size: 42px;
-            }
-
             header {
-                padding: 0 5%;
+                padding: 18px 5%;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                font-size: 21px;
             }
 
             nav a {
-                margin-left: 10px;
+                margin-left: 12px;
+                font-size: 14px;
+            }
+
+            .contenedor {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .inicio {
+                min-height: 75vh;
+            }
+
+            .inicio h1 {
+                letter-spacing: 3px;
+            }
+
+            .inicio .marca {
+                letter-spacing: 5px;
+            }
+
+            .productos {
+                padding: 65px 6%;
+            }
+
+            .productos h2 {
+                font-size: 32px;
             }
         }
     </style>
@@ -169,47 +266,91 @@
     </header>
 
     <section class="inicio" id="inicio">
-        <h1>JG PARFUMS</h1>
-        <p>Calidad, economía y originalidad.</p>
+        <p class="marca">JG PARFUMS</p>
+
+        <h1>TU ESENCIA, TU ESTILO</h1>
+
+        <p class="eslogan">
+            Calidad, economía y originalidad.
+        </p>
+
+        <p class="descripcion">
+            Descubre fragancias que expresan tu personalidad
+            y hacen de cada momento algo especial.
+            Encuentra el aroma ideal para dejar tu huella.
+        </p>
+
+        <a href="#productos" class="boton-productos">
+            DESCUBRIR FRAGANCIAS
+        </a>
     </section>
 
     <section class="productos" id="productos">
-        <h2>Nuestros Perfumes</h2>
+        <h2>Nuestras fragancias</h2>
+
+        <p class="subtitulo">
+            Aromas que hablan de ti, estilos que dejan huella.
+        </p>
 
         <div class="contenedor">
 
             <div class="producto">
                 <div class="imagen">
-                    <img src="ChatGPT%20Image%204%20oct%202026%2C%2021_11_01.png" alt="Erba Pura">
+                    <img
+                        src="ChatGPT%20Image%204%20oct%202026%2C%2021_11_01.png"
+                        alt="Perfume Erba Pura de Xerjoff"
+                        loading="lazy">
                 </div>
 
                 <h3>Erba Pura</h3>
-                <p>Xerjoff</p>
+                <p class="marca-perfume">Xerjoff</p>
+
+                <p class="detalle">
+                    Una fragancia vibrante, frutal y envolvente,
+                    ideal para quienes buscan destacar.
+                </p>
             </div>
 
             <div class="producto">
                 <div class="imagen">
-                    <img src="ChatGPT%20Image%204%20oct%202026%2C%2021_10_35.png" alt="Born in Roma">
+                    <img
+                        src="ChatGPT%20Image%204%20oct%202026%2C%2021_10_35.png"
+                        alt="Perfume Born in Roma de Valentino"
+                        loading="lazy">
                 </div>
 
                 <h3>Born in Roma</h3>
-                <p>Valentino</p>
+                <p class="marca-perfume">Valentino</p>
+
+                <p class="detalle">
+                    Un aroma moderno y sofisticado que combina
+                    elegancia, carácter y personalidad.
+                </p>
             </div>
 
             <div class="producto">
                 <div class="imagen">
-                    <img src="afnan_9pm_1.jpeg" alt="Afnan 9PM">
+                    <img
+                        src="afnan_9pm_1.jpeg"
+                        alt="Perfume 9PM de Afnan"
+                        loading="lazy">
                 </div>
 
                 <h3>9PM</h3>
-                <p>Afnan</p>
+                <p class="marca-perfume">Afnan</p>
+
+                <p class="detalle">
+                    Una fragancia dulce e intensa, perfecta
+                    para quienes quieren dejar una impresión.
+                </p>
             </div>
 
         </div>
     </section>
 
     <footer>
-        © 2026 JG Parfums
+        <p><span>JG PARFUMS</span> — Tu esencia, tu estilo.</p>
+        <p>© 2026 JG Parfums. Todos los derechos reservados.</p>
     </footer>
 
 </body>
