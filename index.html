@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,15 +44,25 @@
             letter-spacing: 2px;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
             font-size: 16px;
             transition: color 0.3s;
         }
 
         nav a:hover {
+            color: #d4af37;
+        }
+
+        nav .instagram-nav {
             color: #d4af37;
         }
 
@@ -112,6 +122,7 @@
             text-decoration: none;
             font-weight: bold;
             letter-spacing: 1px;
+            cursor: pointer;
             transition: 0.3s;
         }
 
@@ -125,6 +136,10 @@
         .productos {
             padding: 80px 8%;
             text-align: center;
+        }
+
+        .productos[hidden] {
+            display: none;
         }
 
         .productos h2 {
@@ -197,7 +212,7 @@
         /* PIE DE PÁGINA */
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 35px 20px;
             border-top: 1px solid #333;
             color: #888;
             font-size: 14px;
@@ -206,6 +221,26 @@
 
         footer span {
             color: #d4af37;
+        }
+
+        .boton-instagram {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 24px;
+            border: 1px solid #d4af37;
+            border-radius: 4px;
+            background: #d4af37;
+            color: #080808;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+        }
+
+        .boton-instagram:hover {
+            background: transparent;
+            color: #d4af37;
+            transform: translateY(-3px);
         }
 
         /* CELULARES Y TABLETAS */
@@ -220,8 +255,11 @@
                 font-size: 21px;
             }
 
+            nav {
+                gap: 14px;
+            }
+
             nav a {
-                margin-left: 12px;
                 font-size: 14px;
             }
 
@@ -261,7 +299,17 @@
 
         <nav>
             <a href="#inicio">Inicio</a>
-            <a href="#productos">Productos</a>
+            <a href="#productos"
+               onclick="mostrarProductos(); return false;">
+                Productos
+            </a>
+            <a
+                class="instagram-nav"
+                href="https://www.instagram.com/jg_parfums.col/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Instagram ↗
+            </a>
         </nav>
     </header>
 
@@ -280,13 +328,13 @@
             Encuentra el aroma ideal para dejar tu huella.
         </p>
 
-<button class="boton-productos" onclick="mostrarProductos()">
-    DESCUBRIR FRAGANCIAS
-</button>
+        <button class="boton-productos" onclick="mostrarProductos()">
+            DESCUBRIR FRAGANCIAS
+        </button>
     </section>
 
     <section class="productos" id="productos" hidden>
-        <h2>Nuestras fragancias</h2> 
+        <h2>Nuestras fragancias</h2>
 
         <p class="subtitulo">
             Aromas que hablan de ti, estilos que dejan huella.
@@ -350,20 +398,31 @@
 
     <footer>
         <p><span>JG PARFUMS</span> — Tu esencia, tu estilo.</p>
+
+        <a
+            class="boton-instagram"
+            href="https://www.instagram.com/jg_parfums.col/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Síguenos en Instagram ↗
+        </a>
+
+        <p>@jg_parfums.col</p>
         <p>© 2026 JG Parfums. Todos los derechos reservados.</p>
     </footer>
-<script>
-    function mostrarProductos() {
-        const productos = document.getElementById("productos");
 
-        productos.hidden = false;
+    <script>
+        function mostrarProductos() {
+            const productos = document.getElementById("productos");
 
-        productos.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }
-</script>
+            productos.hidden = false;
+
+            productos.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    </script>
+
 </body>
 </html>
-```
